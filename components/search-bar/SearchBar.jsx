@@ -12,6 +12,7 @@ const SearchBar = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const products = await searchProducts(searchTerm);
+        console.log(products); // Log the products to the console
         setResults(products); // Store the results in state
     }
 
