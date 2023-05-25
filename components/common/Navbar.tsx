@@ -6,7 +6,7 @@ import { useCart } from '@lib/shopify/storefront-data-hooks'
 import { jsx, Box, useThemeUI, Heading, Button } from 'theme-ui'
 import { useUI } from '@components/common/context'
 import Image from 'next/legacy/image'
-import Searchbar from './Searchbar'
+import Searchbar from './Searchbardemo'
 import Link from '@components/common/Link'
 import { Bag } from '@components/icons'
 
