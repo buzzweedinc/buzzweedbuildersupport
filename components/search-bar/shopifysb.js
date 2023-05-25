@@ -1,30 +1,33 @@
-export async function searchProducts(searchTerm) {
-    const query = `
-      {
-        products(first: 10, query: "title:${searchTerm}") {
-          edges {
-            node {
-              id
-              title
-              handle
-              description
+
+  
+  import { request } from 'graphql-request';
+
+const searchProducts = async (query) => {
+    const data = await request(
+        'https://f32f7c.myshopify.com/api/2023-04/graphql.json',
+        `
+        {
+            products(query: "${query}", first: 10) {
+                edges {
+                    node {
+                        id
+                        title
+                        images(first: 1) {
+                            edges {
+                                node {
+                                    originalSrc
+                                }
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    `;
-  
-    const response = await fetch('https://f32f7c.myshopify.com/api/2021-10/graphql.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/graphql',
-        'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_API_TOKEN,
-      },
-      body: query,
-    });
-  
-    const data = await response.json();
-  
-    return data.data.products.edges.map(edge => edge.node);
-  }
-  
+        `,
+        {
+            'X-Shopify-Storefront-Access-Token': process.env.SHOPIFY_STOREFRONT_API_TOKEN,
+        },
+    );
+
+    return data.products.edges.map(edge => edge.node);
+};

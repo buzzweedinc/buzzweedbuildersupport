@@ -23,6 +23,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "components/search-bar/SearchBarBuilderComponent", "components/search-bar/SearchBar"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "components/search-bar/SearchBarBuilderComponent", "components/search-bar/SearchBar", "components/search-bar/Searchbar.jsx"],
   "exclude": ["node_modules"]
 }
