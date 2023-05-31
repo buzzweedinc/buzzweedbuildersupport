@@ -1,8 +1,0 @@
-import { Builder } from '@builder.io/react';
-import SearchBar from './SearchBar.jsx';
-
-Builder.registerComponent(SearchBar, {
-    name: 'SearchBar',
-    inputs: []
-});
-
