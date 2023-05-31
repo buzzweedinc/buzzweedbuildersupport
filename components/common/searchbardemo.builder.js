@@ -1,5 +1,5 @@
 import { builder } from '@builder.io/react';
-import Searchbar from './Searchbar';
+import Searchbar from './Searchbardemo';
 
 builder.registerComponent(Searchbar, {
   name: 'SearchbarDemo',
