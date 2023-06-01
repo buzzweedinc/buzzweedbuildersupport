@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 }
 
 Builder.registerComponent(
-    dynamic(() => import("/Users/ryanross/Documents/nextjs-shopify-master/components/common/Searchbardemo")),
+    dynamic(() => import("../components/common/Searchbardemo")),
     {
       name: 'Search Bar',
       inputs: [],
@@ -53,7 +53,7 @@ Builder.registerComponent(
 
 
 
-export default function Page({ page }: any) {
+export default function Page({ page }: any): JSX.Element {
   const router = useRouter();
   const isPreviewing = useIsPreviewing();
 
