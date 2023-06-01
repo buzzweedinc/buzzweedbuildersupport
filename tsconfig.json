@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -24,6 +23,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "components/search-bar/SearchBarBuilderComponent", "components/search-bar/SearchBar.jsxcomponents/search-bar/SearchBar", "components/search-bar/SearchBar.jsx", "components/search-bar/SearchBar.jsx", "next.config.cjss"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "exclude": ["node_modules"]
 }
