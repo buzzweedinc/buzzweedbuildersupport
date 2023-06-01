@@ -1,7 +1,7 @@
 import { builder } from '@builder.io/react';
 import Searchbar from './Searchbardemo';
 
-builder.registerComponent(Searchbar, {
+builder.register (Searchbar, {
   name: 'SearchbarDemo',
   description: 'This is a search bar component',
   inputs: [

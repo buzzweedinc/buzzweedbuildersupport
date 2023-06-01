@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import React, { FC, useState, useEffect, useCallback, useRef } from 'react'
-import { Builder } from '@builder.io/react'
 import { useRouter } from 'next/router'
 import shopifyConfig from '@config/shopify'
 import { ProductGrid } from 'blocks/ProductGrid/ProductGrid'
