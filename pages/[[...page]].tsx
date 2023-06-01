@@ -25,7 +25,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 builder.init(builderConfig.apiKey);
 
 Builder.registerComponent(
-  dynamic(() => import("../components/common/Searchbardemo.tsx")),
+  dynamic(() => import("../components/common/Searchbardemo")),
   {
     name: 'Search Bar',
     inputs: [],
