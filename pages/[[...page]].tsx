@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 }
 
 Builder.registerComponent(
-    dynamic(() => import('/Users/ryanross/Documents/nextjs-shopify-master/components/common/Searchbardemo')),
+    dynamic(() => import("/Users/ryanross/Documents/nextjs-shopify-master/components/common/Searchbardemo")),
     {
       name: 'Search Bar',
       inputs: [],
