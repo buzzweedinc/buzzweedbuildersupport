@@ -10,3 +10,4 @@ builder.registerComponent(Searchbar, {
     // { name: 'label', type: 'string' },
   ],
 });
+
