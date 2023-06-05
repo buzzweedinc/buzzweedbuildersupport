@@ -9,6 +9,7 @@ import { searchProducts } from '@lib/shopify/storefront-data-hooks/src/api/opera
 import { ExpandModal } from '@components/modals'
 import { throttle } from 'lodash'
 import { Cross } from '@components/icons'
+import styles from './Searchbar.module.css' // import CSS module
 
 interface Props {
   className?: string
@@ -53,10 +54,9 @@ const Searchbar: FC<Props> = () => {
         />
       </ExpandModal>
 
-      <Box
+      <div
         ref={buttonRef}
-        as={Button}
-        mx={2}
+        className={styles.button}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Search"
       >
@@ -77,7 +77,7 @@ const Searchbar: FC<Props> = () => {
             />
           </svg>
         )}
-      </Box>
+      </div>
     </React.Fragment>
   )
 }
@@ -121,8 +121,8 @@ const SearchModalContent = (props: {
       }}
     >
       <Input
+        className={styles.searchInput} // use the class from CSS module
         type="search"
-        sx={{ marginBottom: 15 }}
         defaultValue={props.initialSearch}
         placeholder="Search for products..."
         onChange={(event) => throttleSearch(event.target.value)}
@@ -161,3 +161,4 @@ const SearchModalContent = (props: {
 }
 
 export default Searchbar
+
