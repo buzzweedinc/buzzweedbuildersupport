@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic'
 import { Button } from 'theme-ui'
 import { ManagedUIContext, useUI } from '@components/common/context'
 import Head from '@components/common/Head'
+import Navbar from '@components/common/Navbar'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
 import Sidebar from '@components/common/Sidebar'
 import { CartSidebarView } from '@components/cart'
@@ -74,8 +75,7 @@ const InnerLayout: React.FC<{
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   return (
     <ThemeProvider theme={theme}>
-
-<Navbar />
+      <Navbar />
       <div
         sx={{
           margin: `0 auto`,
@@ -87,7 +87,6 @@ const InnerLayout: React.FC<{
       >
         <main>{children}</main>
       </div>
-
 
       <Sidebar
         open={
