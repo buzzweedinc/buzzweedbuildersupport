@@ -75,6 +75,20 @@ const InnerLayout: React.FC<{
   return (
     <ThemeProvider theme={theme}>
 
+<Navbar />
+      <div
+        sx={{
+          margin: `0 auto`,
+          px: 20,
+          maxWidth: 1920,
+          minWidth: '60vw',
+          minHeight: 800,
+        }}
+      >
+        <main>{children}</main>
+      </div>
+
+
       <Sidebar
         open={
           displaySidebar ||
