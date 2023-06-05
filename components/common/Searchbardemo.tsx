@@ -9,7 +9,7 @@ import { searchProducts } from '@lib/shopify/storefront-data-hooks/src/api/opera
 import { ExpandModal } from '@components/modals'
 import { throttle } from 'lodash'
 import { Cross } from '@components/icons'
-import styles from '.nextjs-shopify-master/Searchbar.module.css' // import CSS module 
+import styles from './components/common/Searchbar.module.css' // import CSS module 
 
 interface Props {
   className?: string
