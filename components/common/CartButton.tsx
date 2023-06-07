@@ -6,9 +6,10 @@ import { useUI } from '@components/common/context'
 
 interface CartButtonProps {
   ariaLabel?: string
+  customStyles?: Record<string, any> // <-- Add this line
 }
 
-const CartButton: React.FC<CartButtonProps> = ({ ariaLabel = 'Cart' }) => {
+const CartButton: React.FC<CartButtonProps> = ({ ariaLabel = 'Cart', customStyles = {} }) => { // <-- Modify this line
   const { openSidebar } = useUI()
   return (
     <Box
@@ -17,9 +18,10 @@ const CartButton: React.FC<CartButtonProps> = ({ ariaLabel = 'Cart' }) => {
         minWidth: 140,
         width: '100%',
         justifyContent: ['space-between', 'flex-end'],
+        ...customStyles, // <-- Add this line
       }}
     >
-      <Button onClick={openSidebar} aria-label={ariaLabel}>
+      <Button onClick={openSidebar} aria-label={ariaLabel} sx={customStyles}>  
         <Bag />
       </Button>
     </Box>
@@ -30,3 +32,4 @@ export default CartButton
 
 // Add this line
 export {}
+
