@@ -36,18 +36,19 @@ Builder.registerComponent(
 Builder.registerComponent(
   dynamic(() => import("../components/common/CartButton")),
   {
-    name: 'CartButton',
+    name: 'Cart Button',
     inputs: [
       {
-        name: 'ariaLabel',
-        type: 'string',
-        defaultValue: 'Cart',
+        name: 'customStyles',
+        type: 'object',
+        required: true,
+        defaultValue: {},
       }
     ],
-    // replace 'https://example.com/cart-image.png' with your actual image URL
-    image: 'https://example.com/cart-image.png',
+    image: 'IconCart'
   }
 )
+
 
 export async function getStaticProps({ params, locale }: GetStaticPropsContext<{ path: string[] }>) {
   const page = await resolveBuilderContent('page', locale, {
