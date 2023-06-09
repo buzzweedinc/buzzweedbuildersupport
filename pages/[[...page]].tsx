@@ -22,7 +22,7 @@ import Link from '@components/common/Link';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-builder.init(builderConfig.apiKey);
+builder.init("508d46cd92af44a58beb78cf38fc132b");
 
 Builder.registerComponent(
   dynamic(() => import("../components/SearchBar/Searchbardemo")),
