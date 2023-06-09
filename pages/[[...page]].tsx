@@ -25,7 +25,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 builder.init(builderConfig.apiKey);
 
 Builder.registerComponent(
-  dynamic(() => import("../components/common/Searchbardemo")),
+  dynamic(() => import("../components/SearchBar/Searchbardemo")),
   {
     name: 'Search Bar',
     inputs: [],
@@ -34,7 +34,7 @@ Builder.registerComponent(
 )
 
 Builder.registerComponent(
-  dynamic(() => import("../components/common/CartButton")),
+  dynamic(() => import("../components/CartButton/CartButton")),
   {
     name: 'Cart Button',
     inputs: [
