@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styles from './VendorList.module.css';
 
 interface Vendor {
-  id: string;
-  featuredImage: string;
-  title: string;
+  id: number;
+  sp_store_name: string;
+  store_logo: string;
 }
 
 const VendorList: React.FC = () => {
@@ -19,18 +19,15 @@ const VendorList: React.FC = () => {
     })
     .then(res => res.json())
     .then(data => {
-        // Log the whole data object to inspect its structure
-        console.log("Fetched data:", data);
-
-        // Update state with the vendors data (this might need to be changed if the data structure is not as expected)
-        setVendors(data.vendors)
+      console.log(data); // Add this line to check the data returned
+      setVendors(data.sellers)
     })
     .catch(err => console.error(err));
   }, []);
 
   // New useEffect hook to log 'vendors' state every time it changes
   useEffect(() => {
-    console.log("Vendors state:", vendors);
+    console.log(vendors);
   }, [vendors]);
 
   if (!vendors) {
@@ -42,8 +39,8 @@ const VendorList: React.FC = () => {
     <div className={styles.vendorList}>
       {vendors.map(vendor => (
         <div key={vendor.id} className={styles.vendorCard}>
-          <img src={vendor.featuredImage} alt={vendor.title} className={styles.vendorImage} />
-          <h2 className={styles.vendorTitle}>{vendor.title}</h2>
+          <img src={vendor.store_logo} alt={vendor.sp_store_name} className={styles.vendorImage} />
+          <h2 className={styles.vendorTitle}>{vendor.sp_store_name}</h2>
         </div>
       ))}
     </div>
@@ -51,3 +48,4 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
+
