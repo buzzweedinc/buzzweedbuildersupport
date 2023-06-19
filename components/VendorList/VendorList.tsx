@@ -11,14 +11,17 @@ const VendorList: React.FC = () => {
   const [vendors, setVendors] = useState<Vendor[] | undefined>(undefined);
 
   useEffect(() => {
-    fetch('https://mvmapi.webkul.com/api/v2/public/vendors.json?limit=50&shop_name=3e57b7', {
+    fetch('https://mvmapi.webkul.com/api/v2/public/vendors.json?limit=50&shop_name=buzzweed', {
       method: 'GET',
       headers: {
         'accept': 'application/json'
       }
     })
     .then(res => res.json())
-    .then(data => setVendors(data.vendors))
+    .then(data => {
+        console.log(data); // Add this line to check the data returned
+        setVendors(data.vendors)
+    })
     .catch(err => console.error(err));
   }, []);
 
@@ -40,5 +43,6 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
+
 
 
