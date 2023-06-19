@@ -30,6 +30,11 @@ const VendorList: React.FC = () => {
     return <div>Loading vendors...</div>;
   }
 
+  if (vendors.length === 0) {
+    // The vendors array is empty, so render a message or return null
+    return <div>No vendors found.</div>;
+  }
+
   return (
     <div className={styles.vendorList}>
       {vendors.map(vendor => (
@@ -43,6 +48,7 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
+
 
 
 
