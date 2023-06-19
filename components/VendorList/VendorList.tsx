@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import styles from './VendorList.module.css';
 
-// Define a type for your vendor data
 interface Vendor {
   id: string;
-  title: string;
   featuredImage: string;
+  title: string;
 }
 
 const VendorList: React.FC = () => {
-  const [vendors, setVendors] = useState<Vendor[]>([]);
+  const [vendors, setVendors] = useState<Vendor[] | undefined>(undefined);
 
   useEffect(() => {
     fetch('https://mvmapi.webkul.com/api/v2/public/vendors.json?limit=50&shop_name=3e57b7', {
@@ -22,6 +21,11 @@ const VendorList: React.FC = () => {
     .then(data => setVendors(data.vendors))
     .catch(err => console.error(err));
   }, []);
+
+  if (!vendors) {
+    // The data hasn't been loaded yet, so render a loading indicator or return null
+    return <div>Loading vendors...</div>;
+  }
 
   return (
     <div className={styles.vendorList}>
@@ -36,4 +40,5 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
+
 
