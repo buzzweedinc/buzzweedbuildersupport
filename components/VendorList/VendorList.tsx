@@ -11,7 +11,7 @@ const VendorList: React.FC = () => {
   const [vendors, setVendors] = useState<Vendor[] | undefined>(undefined);
 
   useEffect(() => {
-    fetch('https://mvmapi.webkul.com/api/v2/public/seller-profiles.json?limit=50&page=0&sort_by=name_ascending&shop_name=BuzzWeed', {
+    fetch('https://mvmapi.webkul.com/api/v2/public/seller-profiles.json?limit=50&page=0&sort_by=name_ascending&shop_name=buzzweed.myshopify.com', {
       method: 'GET',
       headers: {
         'accept': 'application/json'
