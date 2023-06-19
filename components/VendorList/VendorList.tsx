@@ -25,14 +25,14 @@ const VendorList: React.FC = () => {
     .catch(err => console.error(err));
   }, []);
 
+  // New useEffect hook to log 'vendors' state every time it changes
+  useEffect(() => {
+    console.log(vendors);
+  }, [vendors]);
+
   if (!vendors) {
     // The data hasn't been loaded yet, so render a loading indicator or return null
     return <div>Loading vendors...</div>;
-  }
-
-  if (vendors.length === 0) {
-    // The vendors array is empty, so render a message or return null
-    return <div>No vendors found.</div>;
   }
 
   return (
@@ -48,7 +48,3 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
-
-
-
-
