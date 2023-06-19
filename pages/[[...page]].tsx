@@ -49,6 +49,14 @@ Builder.registerComponent(
   }
 )
 
+Builder.registerComponent(
+  dynamic(() => import('../components/VendorList/VendorList')),
+  {
+    name: 'VendorList',
+    description: 'Displays a list of vendors',
+  }
+);
+
 
 export async function getStaticProps({ params, locale }: GetStaticPropsContext<{ path: string[] }>) {
   const page = await resolveBuilderContent('page', locale, {
