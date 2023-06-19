@@ -19,7 +19,10 @@ const VendorList: React.FC = () => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data); // Add this line to check the data returned
+        // Log the whole data object to inspect its structure
+        console.log("Fetched data:", data);
+
+        // Update state with the vendors data (this might need to be changed if the data structure is not as expected)
         setVendors(data.vendors)
     })
     .catch(err => console.error(err));
@@ -27,7 +30,7 @@ const VendorList: React.FC = () => {
 
   // New useEffect hook to log 'vendors' state every time it changes
   useEffect(() => {
-    console.log(vendors);
+    console.log("Vendors state:", vendors);
   }, [vendors]);
 
   if (!vendors) {
