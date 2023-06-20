@@ -14,11 +14,10 @@
     text-align: center;
   }
   
-  .vendorImage {
-    width: 100%;
-  }
-  
   .vendorTitle {
     margin-top: 10px;
   }
   
+  .vendorImage {
+    width: 100%;
+  }

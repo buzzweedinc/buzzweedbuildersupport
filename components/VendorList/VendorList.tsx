@@ -47,3 +47,4 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
+
