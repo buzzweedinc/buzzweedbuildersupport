@@ -60,17 +60,20 @@ const VendorProfile: React.FC = () => {
   }
 
   return (
-    <div>
-      <img src={seller.store_banner} alt={seller.sp_store_name} />
-      <h1>{seller.sp_store_name}</h1>
-      {products.map(product => (
-        <div key={product.id}>
-          <img src={product.featuredImage} alt={product.title} />
-          <h2>{product.title}</h2>
-        </div>
-      ))}
+    <div className={styles.vendorProfile}>
+      <img className={styles.vendorBanner} src={seller.store_banner} alt={seller.sp_store_name} />
+      <h1 className={styles.vendorTitle}>{seller.sp_store_name}</h1>
+      <div className={styles.productList}>
+        {products.map(product => (
+          <div className={styles.productCard} key={product.id}>
+            <img className={styles.productImage} src={product.featuredImage} alt={product.title} />
+            <h2 className={styles.productTitle}>{product.title}</h2>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default VendorProfile;
+
