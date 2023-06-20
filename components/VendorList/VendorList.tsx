@@ -21,14 +21,13 @@ const VendorList: React.FC = () => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data); // Add this line to check the data returned
+        console.log(data);
         setSellers(data.sellers)
     })
     .catch(err => console.error(err));
   }, []);
 
   if (!sellers) {
-    // The data hasn't been loaded yet, so render a loading indicator or return null
     return <div>Loading vendors...</div>;
   }
 
@@ -36,9 +35,9 @@ const VendorList: React.FC = () => {
     <div className={styles.vendorList}>
       {sellers.map(seller => (
         <Link href={`/vendor/${seller.id}`} key={seller.id}>
-          <a className={styles.vendorCard}>
-            <img src={seller.store_banner} alt={seller.sp_store_name} className={styles.vendorImage} />
-            <h2 className={styles.vendorTitle}>{seller.sp_store_name}</h2>
+          <a className={styles.vendorCardList}>
+            <img src={seller.store_banner} alt={seller.sp_store_name} className={styles.vendorImageList} />
+            <h2 className={styles.vendorTitleList}>{seller.sp_store_name}</h2>
           </a>
         </Link>
       ))}
@@ -47,4 +46,5 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
+
 

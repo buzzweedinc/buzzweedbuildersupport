@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import styles from './VendorProfile.module.css'; // Update this as necessary
+import styles from './VendorProfile.module.css';
 
 interface Seller {
   id: string;
@@ -17,11 +17,10 @@ interface Product {
 
 const VendorProfile: React.FC = () => {
   const router = useRouter();
-  const { id } = router.query; // ID of the vendor from the URL
+  const { id } = router.query;
   const [seller, setSeller] = useState<Seller | undefined>(undefined);
   const [products, setProducts] = useState<Product[]>([]);
 
-  // Load the vendor's info when the component mounts or when `id` changes
   useEffect(() => {
     if (id) {
       fetch(`https://mvmapi.webkul.com/api/v2/public/seller-profiles/${id}.json`, {
@@ -38,7 +37,6 @@ const VendorProfile: React.FC = () => {
     }
   }, [id]);
 
-  // Load the vendor's products when the component mounts or when `id` changes
   useEffect(() => {
     if (id) {
       fetch(`https://mvmapi.webkul.com/api/v2/public/products.json?seller_id=${id}`, {
@@ -61,13 +59,13 @@ const VendorProfile: React.FC = () => {
 
   return (
     <div className={styles.vendorProfile}>
-      <img className={styles.vendorBanner} src={seller.store_banner} alt={seller.sp_store_name} />
-      <h1 className={styles.vendorTitle}>{seller.sp_store_name}</h1>
-      <div className={styles.productList}>
+      <img className={styles.vendorBannerProfile} src={seller.store_banner} alt={seller.sp_store_name} />
+      <h1 className={styles.vendorTitleProfile}>{seller.sp_store_name}</h1>
+      <div className={styles.productListProfile}>
         {products.map(product => (
-          <div className={styles.productCard} key={product.id}>
-            <img className={styles.productImage} src={product.featuredImage} alt={product.title} />
-            <h2 className={styles.productTitle}>{product.title}</h2>
+          <div className={styles.productCardProfile} key={product.id}>
+            <img className={styles.productImageProfile} src={product.featuredImage} alt={product.title} />
+            <h2 className={styles.productTitleProfile}>{product.title}</h2>
           </div>
         ))}
       </div>
@@ -76,4 +74,5 @@ const VendorProfile: React.FC = () => {
 }
 
 export default VendorProfile;
+
 

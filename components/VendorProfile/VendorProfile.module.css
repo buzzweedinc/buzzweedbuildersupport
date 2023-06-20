@@ -1,2 +1,42 @@
+.vendorProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.vendorBannerProfile {
+  max-width: 100%;
+  height: auto;
+}
+
+.vendorTitleProfile {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.productListProfile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.productCardProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productImageProfile {
+  max-width: 100%;
+  height: auto;
+}
+
+.productTitleProfile {
+  text-align: center;
+  margin-top: 10px;
+}
 
   
