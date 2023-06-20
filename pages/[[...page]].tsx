@@ -34,6 +34,16 @@ Builder.registerComponent(
 )
 
 Builder.registerComponent(
+  dynamic(() => import("../components/VendorProfile/VendorProfile")),
+  {
+    name: 'Vendor Profile',
+    inputs: [],
+    image: 'ImProfile'
+  }
+)
+
+
+Builder.registerComponent(
   dynamic(() => import("../components/CartButton/CartButton")),
   {
     name: 'Cart Button',
