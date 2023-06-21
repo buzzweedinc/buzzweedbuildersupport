@@ -18,7 +18,7 @@
     margin-top: 10px;
   }
   
-  .productDescription {
+  .productVendor {
     color: #333;
     font-size: 14px;
   }
@@ -26,6 +26,11 @@
   .productPrice {
     color: #007BFF;
     font-weight: bold;
+  }
+  
+  .productReview {
+    color: #777;
+    font-size: 12px;
   }
   
   .productImage {
