@@ -1,0 +1,35 @@
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .productCard {
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.20);
+    text-align: center;
+  }
+  
+  .productTitle {
+    margin-top: 10px;
+  }
+  
+  .productDescription {
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .productPrice {
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  .productImage {
+    width: 100%;
+    height: auto;
+  }
+  

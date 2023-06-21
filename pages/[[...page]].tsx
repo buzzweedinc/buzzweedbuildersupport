@@ -33,6 +33,16 @@ Builder.registerComponent(
   }
 )
 
+
+Builder.registerComponent(
+  dynamic(() => import("../components/ProductList/ProductList")),
+  {
+    name: 'Product List',
+    inputs: [],
+    image: 'IconSearch'
+  }
+)
+
 Builder.registerComponent(
   dynamic(() => import("../components/VendorProfile/VendorProfile")),
   {
