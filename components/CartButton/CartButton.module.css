@@ -1,6 +1,18 @@
 .button {
-    margin: 0 1rem;
-    color: white;
-    background-color: rgb(141, 22, 227);
-    padding: 1rem;
-  }
+  margin: 0 1rem;
+  color: white;
+  background-color: rgb(34, 139, 34); /* Green color */
+  padding: 1rem;
+  border: none;
+  border-radius: 50px; /* Gives the button a more rounded, modern look */
+  font-weight: 600; /* Makes the button text a bit bolder */
+  transition: all 0.3s ease; /* Adds a smooth transition effect on hover */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Adds a subtle drop shadow */
+  cursor: pointer; /* Changes the cursor to a hand when you hover over the button */
+}
+
+.button:hover {
+  background-color: rgb(50, 205, 50); /* Changes the button color to a lighter green when hovered over */
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); /* Enhances the drop shadow when hovered over */
+  transform: translateY(-7px); /* Gives the button a slight lift when hovered over */
+}
