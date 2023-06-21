@@ -33,6 +33,20 @@ Builder.registerComponent(
   }
 )
 
+Builder.registerComponent(dynamic(() => import("../pages/[productId]")), 
+  {
+  name: 'Product',
+  inputs: [
+    { name: 'id', type: 'number' },
+    { name: 'product_name', type: 'string' },
+    { name: 'price', type: 'string' },
+    { name: 'vendor', type: 'string' },
+    { name: 'images', type: 'string' },
+    { name: 'review_avg', type: 'string' },
+  ],
+});
+
+
 Builder.registerComponent(
   dynamic(() => import("../components/ShopNowButton/ShopNowButton")),
   {
