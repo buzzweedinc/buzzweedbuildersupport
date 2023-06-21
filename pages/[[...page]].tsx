@@ -33,6 +33,14 @@ Builder.registerComponent(
   }
 )
 
+Builder.registerComponent(
+  dynamic(() => import("../components/ShopNowButton/ShopNowButton")),
+  {
+    name: 'Shop Now Button',
+    inputs: [],
+    image: 'IconSearch'
+  }
+)
 
 Builder.registerComponent(
   dynamic(() => import("../components/ProductList/ProductList")),

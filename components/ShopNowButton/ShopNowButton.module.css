@@ -1,0 +1,20 @@
+.shopNowButton {
+    display: inline-block;
+    color: white;
+    background-color: rgb(34, 139, 34); 
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px; 
+    font-weight: 600; 
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    text-decoration: none; 
+}
+
+.shopNowButton:hover {
+    background-color: rgb(50, 205, 50);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); 
+    transform: translateY(-7px); 
+}
