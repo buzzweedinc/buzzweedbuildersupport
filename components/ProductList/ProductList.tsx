@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import styles from './ProductList.module.css'; // Update this as necessary
 
 interface Product {
@@ -39,19 +40,22 @@ const ProductList: React.FC = () => {
   return (
     <div className={styles.productList}>
       {products.map(product => (
-        <div className={styles.productCard} key={product.id}>
-          <img src={product.images} alt={product.product_name} className={styles.productImage} />
-          <h2 className={styles.productTitle}>{product.product_name}</h2>
-          <p className={styles.productVendor}>Vendor: {product.vendor}</p>
-          <p className={styles.productPrice}>Price: {product.price}</p>
-          <p className={styles.productReview}>Average Review: {product.review_avg}</p>
-          {/* Add more product details as needed */}
-        </div>
+        <Link href={`/product/${product.handle}`} key={product.id}>
+          <a className={styles.productCard}>
+            <img src={product.images} alt={product.product_name} className={styles.productImage} />
+            <h2 className={styles.productTitle}>{product.product_name}</h2>
+            <p className={styles.productVendor}>Vendor: {product.vendor}</p>
+            <p className={styles.productPrice}>Price: {product.price}</p>
+            <p className={styles.productReview}>Average Review: {product.review_avg}</p>
+            {/* Add more product details as needed */}
+          </a>
+        </Link>
       ))}
     </div>
   );
 }
 
 export default ProductList;
+
 
 
