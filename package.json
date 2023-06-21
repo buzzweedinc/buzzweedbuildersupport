@@ -58,6 +58,7 @@
     "@theme-ui/presets": "0.15.5",
     "@types/shopify-buy": "2.10.3",
     "@types/traverse": "0.6.32",
+    "axios": "^1.4.0",
     "cheerio": "1.0.0-rc.12",
     "graphql": "^16.6.0",
     "graphql-request": "^6.1.0",
