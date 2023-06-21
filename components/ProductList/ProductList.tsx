@@ -40,7 +40,7 @@ const ProductList: React.FC = () => {
   return (
     <div className={styles.productList}>
       {products.map(product => (
-        <Link href={`/product/${product.handle}`} key={product.id}>
+        <Link href={`/product/${product.id}`} key={product.id}>
           <a className={styles.productCard}>
             <img src={product.images} alt={product.product_name} className={styles.productImage} />
             <h2 className={styles.productTitle}>{product.product_name}</h2>
@@ -56,6 +56,7 @@ const ProductList: React.FC = () => {
 }
 
 export default ProductList;
+
 
 
 
