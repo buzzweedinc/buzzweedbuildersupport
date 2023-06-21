@@ -36,7 +36,7 @@ const VendorList: React.FC = () => {
       {sellers.map(seller => (
         <Link href={`/vendor/${seller.id}`} key={seller.id}>
           <a className={styles.vendorCardList}>
-            <img src={seller.store_banner} alt={seller.sp_store_name} className={styles.vendorImageList} />
+            <img src={seller.store_logo} alt={seller.sp_store_name} className={styles.vendorImageList} />
             <h2 className={styles.vendorTitleList}>{seller.sp_store_name}</h2>
           </a>
         </Link>
@@ -46,5 +46,3 @@ const VendorList: React.FC = () => {
 }
 
 export default VendorList;
-
-
