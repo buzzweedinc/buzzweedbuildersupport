@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { GetServerSidePropsContext } from 'next';
 import axios from 'axios';
 import styles from './Product.module.css';
 import Head from 'next/head';
-import { GetServerSidePropsContext } from 'next';
 
-type ProductProps = {
-  product: {
-    id: number;
-    product_name: string;
-    price: string;
-    vendor: string;
-    images: string;
-    review_avg: string;
-  }
+interface ProductData {
+  id: number;
+  product_name: string;
+  shopify_product_id: number;
+  handle: string;
+  price: string;
+  vendor: string;
+  seller_name: string;
+  vendor_handle: string;
+  product_policy: any;
+  custom_fields: any[];
+  images: string;
+  review_avg: string;
 }
 
-const Product: React.FC<ProductProps> = ({ product }) => {
+interface ProductProps {
+  product: ProductData | null;
+}
+
+const Product: FC<ProductProps> = ({ product }) => {
+  if (!product) {
+    return <div>Product not found</div>
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -34,8 +46,14 @@ const Product: React.FC<ProductProps> = ({ product }) => {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { productId } = context.params!;
   const res = await axios.get(`https://mvmapi.webkul.com/api/v2/public/products.json?limit=50&sort_by=date_add&sort_order=desc&shop_name=3e57b7.myshopify.com`);
-  
+
   const product = res.data.products.find((product: {id: number}) => product.id.toString() === productId);
+
+  if (!product) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: { product },
@@ -43,4 +61,5 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 };
 
 export default Product;
+
 
