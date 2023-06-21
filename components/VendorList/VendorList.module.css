@@ -6,6 +6,7 @@
   
 .vendorCardList {
     width: 200px;
+    max-height: 200px;
     margin: 20px;
     padding: 10px;
     border: 1px solid #ccc;
