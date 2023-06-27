@@ -33,7 +33,7 @@ Builder.registerComponent(
   }
 )
 
-Builder.registerComponent(dynamic(() => import("../pages/[productId]")), 
+Builder.registerComponent(dynamic(() => import("../components/Product/Product")), 
   {
   name: 'Product',
   inputs: [
