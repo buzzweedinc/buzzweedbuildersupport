@@ -14,7 +14,7 @@ import builderConfig from '@config/builder';
 import { resolveBuilderContent } from '@lib/resolve-builder-content';
 import '../blocks/ProductGrid/ProductGrid.builder';
 import '../blocks/CollectionView/CollectionView.builder';
-import { useThemeUI } from '@theme-ui/core';
+//import { useThemeUI } from '@theme-ui/core';
 import { getLayoutProps } from '@lib/get-layout-props';
 import { useAddItemToCart } from '@lib/shopify/storefront-data-hooks';
 import { useUI } from '@components/common/context';
@@ -129,7 +129,7 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
 
 export default function Page({ page, locale }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   const router = useRouter();
-  const { theme } = useThemeUI();
+  //const { theme } = useThemeUI();
   const addToCart = useAddItemToCart();
   const isPreviewing = useIsPreviewing();
   const { openSidebar } = useUI();
@@ -181,7 +181,7 @@ export default function Page({ page, locale }: InferGetStaticPropsType<typeof ge
       <BuilderComponent
         options={{ includeRefs: true }}
         model="page"
-        data={{ theme }}
+        //data={{ theme }}
         context={{
           productBoxService: {
             addToCart,
