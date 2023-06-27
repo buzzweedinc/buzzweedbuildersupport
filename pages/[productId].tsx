@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { GetServerSidePropsContext } from 'next';
 import axios from 'axios';
-import styles from './Product.module.css';
 import Head from 'next/head';
 
 interface ProductData {
@@ -25,29 +24,31 @@ interface ProductProps {
 
 const Product: FC<ProductProps> = ({ product }) => {
   if (!product) {
-    return <div>Product not found</div>
+    return <div>Product not found</div>;
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>{product.product_name}</title>
         <meta name="description" content={product.product_name} />
       </Head>
-      <img src={product.images} alt={product.product_name} className={styles.productImage} />
-      <h1 className={styles.productTitle}>{product.product_name}</h1>
-      <h2 className={styles.productPrice}>${product.price}</h2>
-      <p className={styles.vendor}>Vendor: {product.vendor}</p>
-      <p className={styles.review}>Average review: {product.review_avg}</p>
+      <img src={product.images} alt={product.product_name} />
+      <h1>{product.product_name}</h1>
+      <h2>${product.price}</h2>
+      <p>Vendor: {product.vendor}</p>
+      <p>Average review: {product.review_avg}</p>
     </div>
   );
 };
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { productId } = context.params!;
-  const res = await axios.get(`https://mvmapi.webkul.com/api/v2/public/products.json?limit=50&sort_by=date_add&sort_order=desc&shop_name=3e57b7.myshopify.com`);
+  const res = await axios.get(
+    `https://mvmapi.webkul.com/api/v2/public/products.json?limit=50&sort_by=date_add&sort_order=desc&shop_name=3e57b7.myshopify.com`
+  );
 
-  const product = res.data.products.find((product: {id: number}) => product.id.toString() === productId);
+  const product = res.data.products.find((product: { id: number }) => product.id.toString() === productId);
 
   if (!product) {
     return {
@@ -58,8 +59,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   return {
     props: { product },
   };
-};
+}
 
 export default Product;
+
 
 
