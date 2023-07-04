@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import type { AppProps } from 'next/app'
-//import Layout from '@components/common/Layout'
+import { ManagedUIContext } from '@components/common/context'
 import { builder, Builder } from '@builder.io/react'
 import builderConfig from '@config/builder'
 builder.init(builderConfig.apiKey)
@@ -10,8 +10,6 @@ import '../blocks/ProductGrid/ProductGrid.builder'
 import '../blocks/CollectionView/CollectionView.builder'
 import '../blocks/ProductView/ProductView.builder'
 import '../blocks/CloudinaryImage/CloudinaryImage.builder'
-
-
 
 Builder.register('insertMenu', {
   name: 'Shopify Collections Components',
@@ -36,15 +34,15 @@ Builder.register('insertMenu', {
   items: [{ name: 'CloudinaryImage' }],
 })
 
-const Noop: FC<{ children: React.ReactNode }> = ({ children }) => (
-  <>{children}</>
-)
+const Noop: FC<{ children: React.ReactNode }> = ({ children }) => <>{children}</>
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-   // <Layout pageProps={pageProps}>
+    <ManagedUIContext siteSettings={{ /* provide your site settings */ }}>
+      {/* <Layout pageProps={pageProps}> */}
       <Component {...pageProps} />
-   // </Layout>
+      {/* </Layout> */}
+    </ManagedUIContext>
   )
 }
 
