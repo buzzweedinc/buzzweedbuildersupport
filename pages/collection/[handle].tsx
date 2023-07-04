@@ -14,7 +14,7 @@ import {
 } from '@lib/shopify/storefront-data-hooks/src/api/operations'
 import DefaultErrorPage from 'next/error'
 import Head from 'next/head'
-import { useThemeUI } from '@theme-ui/core'
+//import { useThemeUI } from '@theme-ui/core'
 import { getLayoutProps } from '@lib/get-layout-props'
 
 builder.init(builderConfig.apiKey!)
@@ -58,7 +58,7 @@ export default function Handle({
   const router = useRouter()
   const isPreviewing = useIsPreviewing()
   const isLive = !isPreviewing
-  const { theme } = useThemeUI()
+  //const { theme } = useThemeUI()
   if (!collection && isLive) {
     return (
       <>
@@ -79,7 +79,7 @@ export default function Handle({
       key={collection.id}
       options={{ includeRefs: true }}
       model={builderModel}
-      data={{ collection, theme }}
+      data={{ collection }}
       content={page}
     />
   )
